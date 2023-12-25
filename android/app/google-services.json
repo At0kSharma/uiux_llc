@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "644545910734",
+    "project_id": "uiuxapp-llc",
+    "storage_bucket": "uiuxapp-llc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644545910734:android:a4cf5cb1d6b88949cf3d9f",
+        "android_client_info": {
+          "package_name": "com.mrmjaz.uiux"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkqlxvkLeqr4qrAOQ9ajUBJXNQzNzg76E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
