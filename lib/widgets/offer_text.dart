@@ -13,7 +13,7 @@ class OfferText extends StatelessWidget {
       child: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 20.0),
+            padding: EdgeInsets.only(top: 60.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

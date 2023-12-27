@@ -15,10 +15,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 2));
+    print("delay");
   }
 
   @override
   Widget build(BuildContext context) {
+    print("loading screen");
     return const Scaffold(
       body: Center(
           child: Image(

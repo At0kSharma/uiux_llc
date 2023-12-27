@@ -17,7 +17,8 @@ class AuthenticationController extends GetxController {
     ever(firebaseUser, _setInitialScreen);
   }
 
-  _setInitialScreen(User? user) {
+  _setInitialScreen(User? user) async {
+    await Future.delayed(const Duration(seconds: 2));
     user == null
         ? Get.offAll(() => const LoginScreen())
         : Get.offAll(() => const HomeScreen());
