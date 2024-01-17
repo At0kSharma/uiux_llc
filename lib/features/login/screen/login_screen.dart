@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:uiux/features/login/screen/widget/admin_login_btn.dart';
 import 'package:uiux/features/login/screen/widget/login_form.dart';
 import 'package:uiux/features/login/screen/widget/offer_text.dart';
 
@@ -17,7 +16,7 @@ class LoginScreen extends StatelessWidget {
               LoginForm(),
             ],
           ),
-          const AdminLoginBtn(),
+          // const AdminLoginBtn(),
         ],
       ),
     );

@@ -28,12 +28,12 @@ class CsvController extends GetxController {
       int count = 1;
       final String formattedDate =
           _formatDate(userlist[0]['registrationDate'].toDate());
-      String fileName = '$formattedDate-UpWayUsersList.csv';
+      String fileName = '$formattedDate-UIUXUsersList.csv';
       String path = '/storage/emulated/0/Download/$fileName';
 
       while (await File(path).exists()) {
         count++;
-        fileName = '$formattedDate-UpWayUsersList_$count.csv';
+        fileName = '$formattedDate-UIUXUsersList_$count.csv';
         path = '/storage/emulated/0/Download/$fileName';
       }
 

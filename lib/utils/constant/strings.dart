@@ -1,5 +1,5 @@
 class ImageString {
-  static const String splashScreenLogo = "assets/logo/uiuxllc.png";
+  static const String splashScreenLogo = "assets/logo/uiux.png";
 }
 
 class TextString {
