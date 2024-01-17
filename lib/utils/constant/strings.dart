@@ -1,5 +1,5 @@
 class ImageString {
-  static const String logoImage = "assets/logo/uiuxllc.png";
+  static const String splashScreenLogo = "assets/logo/uiuxllc.png";
 }
 
 class TextString {
@@ -9,7 +9,7 @@ class TextString {
 }
 
 class ColorString {
-  static const String secondarytColor = '0xFF374151';
-  static const String primaryColor = '0xFF849AD4';
-  static const String textColor = '0xFF849AD4';
+  static const String secondaryColor = '0xFF374151';
+  static const String primaryColor = '0xFF83A2FF';
+  static const String textColor = '0xFF83A2FF';
 }
