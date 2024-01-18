@@ -17,7 +17,7 @@ class EnterThePassText extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Enter The  ",
+                    "Login to  ",
                     style: TextStyle(
                       fontFamily: "Poppins",
                       fontSize: 26.0,
@@ -26,7 +26,7 @@ class EnterThePassText extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    " Password",
+                    " Dashbard",
                     style: TextStyle(
                       fontSize: 26.0,
                       fontFamily: "Poppins",

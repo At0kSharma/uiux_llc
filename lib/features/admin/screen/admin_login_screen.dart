@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uiux/common/widget/form_label.dart';
 import 'package:uiux/features/admin/controller/admin_login_controller.dart';
+import 'package:uiux/features/admin/screen/widget/enter_password_text.dart';
+import 'package:uiux/features/authentication/password/screen/widget/reset_password_btn.dart';
 
 class AdminLogin extends StatefulWidget {
   const AdminLogin({super.key});
@@ -36,11 +38,14 @@ class _AdminLoginState extends State<AdminLogin> {
         child: Padding(
           padding: const EdgeInsets.only(top: 50.0, left: 20.0, right: 20.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              // const EnterThePassText(),
+              const EnterThePassText(),
+              //imput label
               // const FormLabel(label: "Enter Your Email Here", leftPadding: 0),
               // const SizedBox(height: 12),
+
+              // //email input field
               // TextFormField(
               //   controller: controller.email,
               //   decoration: InputDecoration(
@@ -56,9 +61,13 @@ class _AdminLoginState extends State<AdminLogin> {
               //   ),
               // ),
               const SizedBox(height: 30),
+
+              //password label
               const FormLabel(
                   label: "Enter Your Password Here", leftPadding: 0),
               const SizedBox(height: 12),
+
+              //password input text field
               TextFormField(
                 controller: controller.password,
                 obscureText: _obscureText,
@@ -84,7 +93,12 @@ class _AdminLoginState extends State<AdminLogin> {
                   ),
                 ),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 0),
+
+              //reset password button
+              const ResetPasswordBtn(),
+
+              //submit button
               ElevatedButton(
                 onPressed: () {
                   AdminLoginController.instance.authenticateAdminUser(

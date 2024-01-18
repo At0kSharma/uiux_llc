@@ -1,4 +1,4 @@
-package com.mrmjaz.uiux
+package com.admin.uiux
 
 import io.flutter.embedding.android.FlutterActivity
 

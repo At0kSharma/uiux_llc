@@ -2,7 +2,9 @@ import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crypto/crypto.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:uiux/features/admin/screen/admin_login_screen.dart';
 
 class AdminController extends GetxController {
   static AdminController get instance => Get.find();
@@ -12,6 +14,10 @@ class AdminController extends GetxController {
     var bytes = utf8.encode(password); // Encode the password as bytes
     var digest = sha256.convert(bytes); // Compute the SHA-256 hash
     return digest.toString(); // Convert the hash to a string
+  }
+
+  Future<void> signOutUser() async {
+    await FirebaseAuth.instance.signOut();
   }
 
 // Create or update user with hashed password in Firestore
@@ -40,6 +46,39 @@ class AdminController extends GetxController {
     }
   }
 
+  Future<void> createUserWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        Get.snackbar("Error", "Something went wrong. Try Again");
+      } else if (e.code == 'email-already-in-use') {
+        Get.snackbar("Error", "Something went wrong. Try Again");
+      }
+    } catch (e) {
+      Get.snackbar("Error", "Something went wrong. Try Again");
+    }
+  }
+
+  Future<void> signInWithEmailAndPassword(String email, String password) async {
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      Get.snackbar("Error", e.code);
+
+      // if (e.code == 'user-not-found') {
+      //   Get.snackbar("Error", "Something went wrong. Try Again");
+      // } else if (e.code == 'wrong-password') {
+      //   Get.snackbar("Error", "Something went wrong. Try Again");
+      // }
+    }
+  }
+
   // Verify if entered password matches the hashed password in Firestore
   Future<bool> verifyPassword(String email, String enteredPassword) async {
     final CollectionReference adminsCollection =
@@ -63,5 +102,15 @@ class AdminController extends GetxController {
 
     // Return false if the admin with the specified email does not exist
     return false;
+  }
+
+  Future<void> resetUserPassword(String email) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      Get.snackbar("Success", "Check Your email for reset link");
+      Get.to(() => const AdminLogin());
+    } catch (e) {
+      Get.snackbar("Error", "Email not found");
+    }
   }
 }

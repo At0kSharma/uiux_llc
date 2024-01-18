@@ -33,7 +33,7 @@ class PdfController extends GetxController {
           return [
             // Header
             pw.Text(
-              'UpWay Users List',
+              'UIUX Users List',
               style: pw.TextStyle(
                 fontSize: 18,
                 fontWeight: pw.FontWeight.bold,
@@ -65,18 +65,18 @@ class PdfController extends GetxController {
 
     if (externalDir != null) {
       // Save the PDF file to the external directory
-      // final String path = '${externalDir.path}/UpWayUsersList.pdf';
+      // final String path = '${externalDir.path}/UIUXUsersList.pdf';
       // final File file = File(path);
-      // const String path = '/storage/emulated/0/Download/UpWayUsersList1.pdf';
+      // const String path = '/storage/emulated/0/Download/UIUXUsersList1.pdf';
       int count = 1;
       final String formattedDate =
           _formatDate(userlist[0]['registrationDate'].toDate());
-      String fileName = '$formattedDate-UpWayUsersList.pdf';
+      String fileName = '$formattedDate-UIUXUsersList.pdf';
       String path = '/storage/emulated/0/Download/$fileName';
 
       while (await File(path).exists()) {
         count++;
-        fileName = '$formattedDate-UpWayUsersList_$count.pdf';
+        fileName = '$formattedDate-UIUXUsersList_$count.pdf';
         path = '/storage/emulated/0/Download/$fileName';
       }
 

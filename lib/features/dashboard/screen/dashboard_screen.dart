@@ -1,9 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uiux/features/admin/controller/admin_login_controller.dart';
+import 'package:uiux/features/authentication/admin/controller/admin_controller.dart';
 import 'package:uiux/features/dashboard/screen/widget/date_picker_form.dart';
 import 'package:uiux/features/dashboard/controller/dashboard_controller.dart';
 import 'package:uiux/common/widget/user_quantity.dart';
-import 'package:uiux/features/login/screen/login_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -53,7 +55,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           // ),
           IconButton(
               onPressed: () {
-                Get.offAll(() => const LoginScreen());
+                AdminLoginController.instance.logOutUser();
               },
               icon: const Icon(Icons.lock)),
           const Padding(padding: EdgeInsets.only(right: 10)),

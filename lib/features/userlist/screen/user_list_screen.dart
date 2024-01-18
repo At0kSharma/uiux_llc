@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uiux/common/widget/user_quantity.dart';
-import 'package:uiux/features/login/screen/login_screen.dart';
+import 'package:uiux/features/admin/controller/admin_login_controller.dart';
 import 'package:uiux/features/userlist/controller/csv_controller.dart';
 import 'package:uiux/features/userlist/controller/pdf_controller.dart';
 import 'package:uiux/features/userlist/controller/user_list_controller.dart';
@@ -66,9 +66,7 @@ class _UserListScreenState extends State<UserListScreen> {
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           IconButton(
-              onPressed: () {
-                Get.offAll(() => const LoginScreen());
-              },
+              onPressed: () => AdminLoginController.instance.logOutUser(),
               icon: const Icon(Icons.lock)),
           const Padding(padding: EdgeInsets.only(right: 10)),
         ],

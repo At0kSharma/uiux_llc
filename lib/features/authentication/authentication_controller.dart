@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:uiux/features/home/screen/home_screen.dart';
-import 'package:uiux/features/login/screen/login_screen.dart';
+import 'package:uiux/features/admin/screen/admin_login_screen.dart';
+import 'package:uiux/features/dashboard/screen/dashboard_screen.dart';
 
 class AuthenticationController extends GetxController {
   static AuthenticationController get instance => Get.find();
@@ -20,8 +20,8 @@ class AuthenticationController extends GetxController {
   _setInitialScreen(User? user) async {
     await Future.delayed(const Duration(seconds: 2));
     user == null
-        ? Get.offAll(() => const LoginScreen())
-        : Get.offAll(() => const HomeScreen());
+        ? Get.offAll(() => const AdminLogin())
+        : Get.offAll(() => const DashboardScreen());
   }
 
   Future<void> phoneAuthentication(String phoneNo) async {
