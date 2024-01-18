@@ -20,25 +20,13 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     controller = WebViewController()
       ..loadRequest(
-        Uri.parse('https://upway.in/'),
+        Uri.parse('https://uiux.llc/'),
       );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: FutureBuilder(
-      //     future: _getCurrentUserId(),
-      //     builder: (context, snapshot) {
-      //       if (snapshot.connectionState == ConnectionState.waiting) {
-      //         return const CircularProgressIndicator();
-      //       } else {
-      //         return Text('User ID: ${snapshot.data}');
-      //       }
-      //     },
-      //   ),
-      // ),
       appBar: AppBar(
         toolbarHeight: 0.0,
         backgroundColor: const Color(0xFF83A2FF),
